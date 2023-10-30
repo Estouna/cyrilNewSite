@@ -1,0 +1,91 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../asset/fondCode.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.opac {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container-home {
+    width: 100%;
+    height: 100vh;
+}
+
+.item:nth-child(1),
+.item:nth-child(3) {
+    background-image: url('../asset/fondBlanc3.jpg');
+    background-size: 35%;
+}
+
+.img-home {
+    width: 100%;
+    height: 100%;
+    box-shadow:  inset 0 -140px 50px rgba(0, 0, 0, 0.733), 
+    inset 0 140px 50px rgba(0, 0, 0, 0.733);
+    -webkit-filter: brightness(95%);
+    filter: brightness(95%);
+}
+
+.container-svg-1 {
+    padding-top: 100px;
+}
+
+.container-svg-2 {
+    padding-top: 0px;
+}
+
+.svg-CD {
+    width: calc(80px + 10vw);
+}
+
+.svg-Dev {
+    width: calc(120px + 10vw);
+}
+
+.svg-CD {
+    transform: scale(2);
+}
+
+.path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    animation: dash 4s linear;
+    fill: var(--logo);
+}
+
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1;
+        fill: transparent;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    100% {
+        fill: var(--logo);
+    }
+}
+
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

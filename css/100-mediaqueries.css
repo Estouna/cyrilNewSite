@@ -1,0 +1,342 @@
+/*______________________________ MEDIAQUERIES ______________________________*/
+
+
+/* 
+    ______________________________ MAX-WIDTH 1600px ______________________________
+*/
+
+@media only screen and (max-width: 1600px) {
+    
+    /*SECTION HOME*/
+    .img-home {
+        box-shadow: inset 0 -60px 50px rgba(0, 0, 0, 0.733), 
+        inset 0 60px 50px rgba(0, 0, 0, 0.733);
+    }
+}
+
+/* END MAX-WIDTH 1600px ______________________________*/
+
+
+/* 
+    ______________________________ MAX-WIDTH 799px ______________________________
+*/
+
+@media only screen and (max-width: 900px) {
+
+    /*main and section*/
+    /*Passe la gestion du scroll en css (trop de problèmes de compatibilité navigateur avec tactile en javascript)*/
+    main {
+        width: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 100%;
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+
+    #a_propos, #tarifs, #portfolio, #contact, .item:nth-child(1), .item:nth-child(3), .container-aPropos {
+        background-size: 80%;
+    }
+
+    ._face {
+        background-size: 150%;
+    }
+
+    /*NAVBAR*/
+    .header-nav {
+        top: 0;
+        right: 0;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .nav-main {
+        background-color: transparent;
+        border: none;
+    }
+
+    .nav-main-ul {
+        position: fixed;
+        padding: 10px 0;
+        left: -105%;
+        top: calc(60px + 1vw);
+        flex-direction: column;
+        width: 100%;
+        transition: 0.3s;
+        background-color: var(--white);
+    }
+
+    .nav-main-ul.active {
+        left: 0;
+    }
+
+    .nav-main-li {
+        margin: 10px 0;
+    }
+
+    .nav-main-li a {
+        color: var(--text-darkGrey);
+        border-right: none;
+    }
+
+    .burger {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        top: 0;
+    }
+
+    .burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-main a.active {
+        background-color: transparent;
+        color: var(--text-darkGrey);
+    }
+    
+    /*SECTION HOME*/
+    .img-home {
+        box-shadow: inset 0 -45px 35px rgba(0, 0, 0, 0.733), 
+        inset 0 45px 35px rgba(0, 0, 0, 0.733);
+    }
+
+    /*SECTION TARIFS*/
+    .controls {
+        gap: 80px;
+    }
+}
+
+/* END MAX-WIDTH 900px ______________________________*/
+
+
+/* 
+    ______________________________ MAX-WIDTH 700px ______________________________
+*/
+@media only screen and (max-width: 700px) {
+
+    #a_propos, #tarifs, #portfolio, #contact, .item:nth-child(1), .item:nth-child(3), .container-aPropos {
+        background-size: 100%;
+    }
+
+    ._face {
+        background-size: 170%;
+    }
+
+}
+
+/* END MAX-WIDTH 700px ______________________________*/
+
+
+/* 
+    ______________________________ MAX-WIDTH 500px ______________________________
+*/
+@media only screen and (max-width: 500px) {
+
+    #a_propos, #tarifs, #portfolio, #contact, .item:nth-child(1), .item:nth-child(3), .container-aPropos {
+        background-size: 150%;
+    }
+    
+    /*SECTION TARIFS*/
+    .controls {
+        gap: 40px;
+    }
+    
+    .label-cube {
+        border: 1px solid #97bac5;
+        padding: 2px;
+        width: 60px;
+        height: 60px;
+        font-size: 9px;
+    }
+    
+    ._face {
+        background-size: 190%;
+    }
+}
+
+/* END MAX-WIDTH 500px ______________________________*/
+
+/* 
+    ______________________________ MAX-WIDTH 385px ______________________________
+*/
+@media only screen and (max-width: 385px) {
+    
+    .box-p-aPropos {
+        width: calc(280px + 7vw);
+    }
+    
+    .p-aPropos {
+        font-size: calc(14px + 0.4vw);
+        line-height: 20px;
+        letter-spacing: 1px;
+    }
+}
+
+/* END MAX-WIDTH 385px ______________________________*/
+
+
+
+/* 
+   ______________________________ MAX-HEIGHT 599px ______________________________
+*/
+@media only screen and (max-height: 599px) {
+
+    #a_propos h1,
+    #tarifs h1,
+    #portfolio h1,
+    #contact h1,
+    #test h1,
+    #test2 h1 {
+        margin: calc(2px + 4vw) 0 calc(2px + 1vw) 0;
+    }
+
+    /*NAVBAR*/
+    .box-logo {
+        width: calc(110px + 7vw);
+    }
+
+    /*SECTION TARIFS*/
+    .label-cube {
+        border: 1px solid #97bac5;
+        border-radius: 5px;
+        padding: 4px;
+        width: calc(100px + 1.5vw);
+        height: calc(8px + 1.5vw);
+        font-size: calc(7px + 0.2vw);
+    }
+
+    ._face {
+        line-height: 12px;
+    }
+
+    .space3d, ._face {
+        width: max(160px, 10vw);
+        height: max(160px, 10vw);
+    }
+
+    ._face--front {transform: translate3d(0, 0, max(80px, 5vw));}
+    ._face--top {transform: rotateX(90deg) translate3d(0, 0, max(80px, 5vw));}
+    ._face--bottom {transform: rotateX(-90deg) translate3d(0, 0, max(80px, 5vw));}
+    ._face--left {transform: rotateY(-90deg) translate3d(0, 0, max(80px, 5vw));}
+    ._face--right {transform: rotateY(90deg) translate3d(0, 0, max(80px, 5vw));}
+    ._face--back {transform: rotateY(180deg) translate3d(0, 0, max(80px, 5vw));}
+
+}
+
+/* END MAX-HEIGHT 599px ______________________________*/
+
+/* 
+   ______________________________ MAX-HEIGHT 400px ______________________________
+*/
+@media only screen and (max-height: 400px) {
+
+    #a_propos h1,
+    #tarifs h1,
+    #portfolio h1,
+    #contact h1,
+    #test h1,
+    #test2 h1 {
+        font-size: 13px;
+        margin: calc(2px + 4vw) 0 calc(2px + 1vw) 0;
+    }
+
+    /*NAVBAR*/
+    .box-logo {
+        width: calc(110px + 7vw);
+    }
+
+    /*SECTION HOME*/
+    .container-svg-1 {
+        padding-top: 40px;
+    }
+
+    .svg-CD {
+        width: calc(40px + 10vw);
+    }
+    
+    .svg-Dev {
+        width: calc(70px + 10vw);
+    }
+
+    /*SECTION A PROPOS*/
+    .container-aPropos{
+        margin-top: 2%;
+    } 
+
+    .img-me {
+        width: 100px;
+        height: 150px;
+        background-color: rgb(231, 231, 231);
+    }
+
+    .color {
+        padding: 0;
+        gap: 20px;
+    }
+
+    /*SECTION TARIFS*/
+    .label-cube {
+        border: 1px solid #97bac5;
+        border-radius: 5px;
+        padding: 4px;
+        width: calc(100px + 1.5vw);
+        height: calc(8px + 1.5vw);
+        font-size: calc(7px + 0.2vw);
+    }
+
+    ._face {
+        line-height: 12px;
+    }
+
+    .space3d, ._face {
+        width: max(140px, 10vw);
+        height: max(140px, 10vw);
+    }
+
+    ._face h2 {
+        font-size: 9px;
+        padding: calc(1px + 0.2vw) calc(8px + 0.2vw);
+        border-radius: 3px;
+    }
+    
+    ._face p {
+        font-size: 9px;
+        padding: 3px;
+    }
+
+    ._face--front {transform: translate3d(0, 0, max(70px, 5vw));}
+    ._face--top {transform: rotateX(90deg) translate3d(0, 0, max(70px, 5vw));}
+    ._face--bottom {transform: rotateX(-90deg) translate3d(0, 0, max(70px, 5vw));}
+    ._face--left {transform: rotateY(-90deg) translate3d(0, 0, max(70px, 5vw));}
+    ._face--right {transform: rotateY(90deg) translate3d(0, 0, max(70px, 5vw));}
+    ._face--back {transform: rotateY(180deg) translate3d(0, 0, max(70px, 5vw));}
+
+}
+
+/* END MAX-HEIGHT 400px ______________________________*/
+
+
+
+/* 
+    ______________________________ LANDSCAPE MAX-HEIGHT 600px ______________________________
+*/
+
+@media screen and (orientation: landscape) and (max-height: 500px) {}
+
+/* END LANDSCAPE MAX-HEIGHT 600px______________________________*/

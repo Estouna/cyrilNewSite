@@ -1,0 +1,61 @@
+#test {
+    background-color: navajowhite;
+}
+
+#grid {
+    width: 40vw;
+    height: 40vh;
+    transition: 700ms;
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    background: blanchedalmond;
+    letter-spacing: 5px;
+}
+
+#grid:hover {
+    grid-template-columns: 1fr 3fr;
+    letter-spacing: 2px;
+}
+
+.col-2 {
+    background-image: url('../asset/gecko_1920x1080.jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: -5px 0px 5px black;
+}
+
+/*test 2*/
+#test2 {
+    background-color: blanchedalmond;
+}
+
+.titre {
+    flex-direction: column;
+}
+
+.titre span {
+    font-size: 80px;
+    -webkit-text-stroke: calc(0.8px + 0.05vw) black;
+    color: transparent;
+}
+
+#test2 h2,
+#test2 h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(30, 30, 30);
+}
+
+#test2 h2 {
+    font-size: calc(22px + 2.8vw);
+    letter-spacing: calc(2px + 0.3vw);
+}
+
+#test2 h2 span{
+    font-size: calc(26px + 3vw);
+}
+
+#test2 h3 {
+    font-size: calc(11px + 0.9vw);
+    letter-spacing: calc(1px + 0.06vw);
+    text-transform: uppercase;
+}

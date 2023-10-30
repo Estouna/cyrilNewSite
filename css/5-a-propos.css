@@ -1,0 +1,99 @@
+.container-aPropos{
+    /* background-color: var(--logo); */
+    background-image: url('../asset/fondBlanc.webp');
+    background-size: 35%;
+    width: 100%;
+    height: 100%;
+    border-top: 6px double var(--white);
+    border-bottom: 6px double var(--white);
+    margin-top: 5%;
+}
+
+.color {
+    background-color: #7d9ba5af;
+    width: 100%;
+    height:100%;
+    padding: calc(10px + 2vw) 0;
+    gap: 20px;
+}
+
+.img-me {
+    width: 150px;
+    height: 200px;
+    background-color: rgb(231, 231, 231);
+}
+
+.me {
+    font-size: calc(20px + 0.35vw);
+    transform: rotate(90deg) scale(3);
+}
+
+.box-p-aPropos {
+    width: calc(350px + 7vw);
+}
+
+.p-aPropos {
+    position: relative;
+    overflow-wrap: normal;
+    width: 100%;
+    font-size: calc(16px + 0.4vw);
+    margin-top: 20px;
+    color: var(--text-white);
+    line-height: 30px;
+    letter-spacing: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.p-aPropos span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow-wrap: normal;
+}
+
+.p-aPropos span.active {
+    animation: smoke 3s linear forwards;
+    /*Par défaut l'origine de transform est center*/
+    transform-origin: bottom;
+}
+
+.a-bmc {
+    font-size: calc(13px + 0.1vw);
+    margin: 5px;
+    background-color: rgb(92, 92, 255);
+    transition: 0.5s;
+    border: 3px double #8e95fa;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 2px 2px 5px rgb(20, 20, 20);
+}
+
+.a-bmc:hover {
+    background-color: rgb(162, 162, 255);
+}
+
+
+@keyframes smoke {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+
+    75% {
+        opacity: 1;
+        /*Lettres partent en fumée plus tard*/
+        /* filter: blur(0); */
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+}

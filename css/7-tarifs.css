@@ -1,0 +1,300 @@
+#tarifs {
+    position: relative;
+}
+
+.container-tarifs h2 {
+    font-size: calc(1px + 0.35vw);
+    text-align: center;
+    background-color: var(--logo);
+    color: var(--text-white);
+    padding: calc(1px + 0.5vw);
+}
+
+.container-tarifs {
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    width: 100%;
+    gap: 200px;
+    margin-right: 5px;
+}
+
+.input-cube {
+    display: none;
+}
+
+.gr-label {
+    gap: 10px;
+}
+
+.line-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.label-cube {
+    background-color: var(--logo);
+    border: 3px solid #97bac5;
+    box-shadow: 1px 2px 5px rgb(45, 45, 45);
+    border-radius: 50%;
+    padding: 5px;
+    width: calc(50px + 1.5vw);
+    height: calc(50px + 1.5vw);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: calc(7px + 0.2vw);
+}
+
+.label-cube, ._face {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.label-cube:hover {
+    background-color: rgb(162, 183, 190);
+    border: 3px solid rgb(176, 193, 199);;
+}
+
+.label-cube:active {
+    background-color: #668792;
+    border: 3px solid #668792af;
+    box-shadow: inset 3px 3px 10px black;
+    color: rgb(219, 219, 219);
+}
+
+/* .separator {
+    margin: calc(60px + 3.5vw);
+} */
+
+
+/* 3D Cube */
+.space3d {
+    display: inline-block;
+    perspective: 1000px;
+    text-align: center;
+}
+
+/* 
+Rappel; augmenter/réduire aussi translate3d de ._face--front, ._face--top, etc.
+ex: si width/height = max(100px, 12vw), translate3d = 100/2 et 12/2 donc translate3d(0, 0, max(50px, 6vw))
+*/
+.space3d, ._face {
+    width: max(180px, 20vw);
+    height: max(180px, 20vw);
+}
+
+._3dbox {
+    position: relative;
+    display: inline-block;
+    transition: 1s all cubic-bezier(0.2, 0.9, 0.5, 1.15);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* transform: rotateX(-15deg) rotateY(15deg); */
+}
+
+._face {
+    position: absolute;
+    background-image: url('../asset/fondBlanc2.jpg');
+    background-size: 120%;
+    padding: 5px;
+    line-height: calc(12px + 0.5vw);
+    border: 1px solid var(--logo);
+}
+
+.btn-face {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+._face h2 {
+    font-size: calc(9px + .2vw);
+    background-color: var(--logo);
+    color: var(--text-white);
+    padding: calc(1px + 0.2vw) calc(8px + 0.2vw);
+    border-radius: 5px;
+}
+
+._face p {
+    font-size: calc(7px + .2vw);
+    padding: 5px;
+}
+
+.prix{
+    padding: 5px;
+    background-color: var(--logo);
+    color: var(--text-white);
+    border-radius: 15px;
+}
+
+._face--front {transform: translate3d(0, 0, max(90px, 10vw));}
+._face--top {transform: rotateX(90deg) translate3d(0, 0, max(90px, 10vw));}
+._face--bottom {transform: rotateX(-90deg) translate3d(0, 0, max(90px, 10vw));}
+._face--left {transform: rotateY(-90deg) translate3d(0, 0, max(90px, 10vw));}
+._face--right {transform: rotateY(90deg) translate3d(0, 0, max(90px, 10vw));}
+._face--back {transform: rotateY(180deg) translate3d(0, 0, max(90px, 10vw));}
+
+#radio-left:checked~.space3d ._3dbox {transform: rotateY(90deg);}
+#radio-right:checked~.space3d ._3dbox {transform: rotateY(-90deg);}
+#radio-bottom:checked~.space3d ._3dbox {transform: rotateX(90deg);}
+#radio-top:checked~.space3d ._3dbox {transform: rotateX(-90deg);}
+#radio-back:checked~.space3d ._3dbox {transform: rotateY(180deg);}
+
+/*MODAL*/
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    color: var(--text-black);
+    box-shadow: inset 0 0 20px 1px var(--black);
+    border: 4px double var(--logo);
+    border-radius: 5px;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        visibility 0.2s ease-out,
+        opacity 0.4s ease-out;
+    z-index: 1100;
+}
+
+.modal-content.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    gap: 10px;
+}
+
+/*Button close modal*/
+.btn-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3%;
+    right: 5%;
+    background-color: var(--logo);
+    padding: 0 calc(5px + 0.2vw);
+    color: var(--text-white);
+    border: 1px solid var(--logo);
+    font-size: calc(16px + 0.5vw);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-close:hover {
+    background-color: var(--grey);
+}
+
+.tarifs-details {
+    margin: calc(7px + 1.5vw);
+    font-size: calc(7px + 0.35vw);
+    color: var(--text-darkGrey);
+    text-align: center;
+}
+
+
+/*TARIF 2*/
+.container-tarifs-2 h2 {
+    font-size: calc(11px + 0.35vw);
+    text-align: center;
+    background-color: var(--logo);
+    color: var(--text-white);
+    padding: calc(1px + 0.5vw);
+}
+
+.faceCard h3 {
+    font-size: calc(9px + 0.35vw);
+    text-align: center;
+    margin: calc(2px + 0.5vw) 0;
+    padding: 2px;
+    border-top: 1px solid var(--logo);
+    border-bottom: 1px solid var(--logo);
+}
+
+.bloc-card {
+    width: calc(200px + 10vw);
+    height: calc(160px + 14vw);
+    perspective: 600px;
+}
+
+.card-1, .card-2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 6px double var(--logo);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px var(--logo),
+        inset 0px 1px 10px var(--logo);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    z-index: 1;
+}
+
+.cards {
+    transform-origin: center right;
+}
+
+.cards.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+/* .card-2.is-flipped, .card-3.is-flipped  {
+    transform: rotateY(180deg);
+} */
+
+
+.faceCard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-size: calc(9px + 0.35vw);
+    z-index: 1;
+}
+
+.faceCard-front {
+    background: white;
+}
+
+.faceCard-back {
+    background: var(--logo);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.faceCard ul {
+    padding: 5px 10px 5px 10px;
+}
+
+.faceCard li {
+    margin: calc(1px + 0.3vw) 0;
+}
+
+.faceCard li span {
+    font-size: calc(8px + 0.27vw);
+}
+
+.faceCard p {
+    font-size: calc(8px + 0.27vw);
+    text-align: center;
+}

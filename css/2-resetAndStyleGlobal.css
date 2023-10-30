@@ -1,0 +1,156 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --------------- TEXT COLOR ----------------- */
+    --text-black: #111111;
+    --text-white: #fcfcfc;
+    --text-grey: #adadad;
+    --text-darkGrey: #706f6f;
+    --text-blue: #142f7d;
+    --text-logo: #7d9ba5;
+    /* --------------- COLORS ----------------- */
+    --black: #111111;
+    --white: #fcfcfc;
+    --grey: #adadad;
+    --darkGrey: #706f6f;
+    --blue: #142f7d;
+    --logo: #7d9ba5;
+    /* --------------- SLIDER BACKGROUND ----------------- */
+    --slide1: #111111;
+    --slide2: #8a6630;
+    --slide3: #041a70;
+    --slide4: #7d7939;
+    --slide5: #2441b9;
+    --slide6: #0c614c;
+    --slide7: #a41c2a;
+    --slide8: #d59a02;
+    --slide9: #c4cd7c;
+    --slide10: #7d881f;
+    --slide11: #ec6f05;
+    --slide12: #5397ea;  
+    --slide13: #cf1ba8;  
+    /* --------------- FONT-FAMILY ----------------- */
+    --font-1: 'Roboto-Regular', arial, sans-serif;
+    --font-2: 'Poppins-Regular', arial, sans-serif;
+    --font-3: 'Photoshoot', arial, sans-serif;
+}
+
+body, main {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body, input, button, textarea, select {font-size: calc(12px + 0.35vw);}
+textarea{resize: none;}
+ul {list-style-type: none;}
+h1, h2, h3, h4, h5, h6 {font-family: var(--font-2);}
+p, a, button, input, textarea, div {font-family: var(--font-1);}
+
+p {letter-spacing: 0.5px;}
+
+a {
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#a_propos, #tarifs, #portfolio, #contact {
+    /* background-color: var(--white); */
+    background-image: url('../asset/fondBlanc3.jpg');
+    background-size: 35%;
+}
+
+#a_propos h1, #tarifs h1, #tarifs2 h1, #portfolio h1, #contact h1, #test h1, #test2 h1 {
+    font-size: calc(15px + 0.5vw);
+    letter-spacing: 2px;
+    padding: 5px;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    border-radius: 10px;
+    margin: calc(50px + 2vw) 0 calc(2px + 4vw);
+    text-align: center;
+    color: var(--text-logo);
+}
+
+
+/*
+------------------------------------------------------ FLEXBOX AND TEXT------------------------------------------------------
+*/
+.flex {display: flex;}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------ FLEX-WRAP ------------*/
+.f-wrap {flex-wrap: wrap;}
+.f-nowrap {flex-wrap: nowrap;}
+/*------------ FLEX-GROW ------------*/
+.f-grow-1 {flex-grow: 1;}
+.f-grow-2 {flex-grow: 2;}
+
+/*------------ JUSTIFY-CONTENT ------------*/
+.f-justify-start {justify-content: flex-start;}
+.f-justify-center {justify-content: center;}
+.f-justify-end {justify-content: flex-end;}
+.f-justify-between {justify-content: space-between;}
+.f-justify-around {justify-content: space-around;}
+.f-justify-evenly {justify-content: space-evenly;}
+
+/*------------ ALIGN-ITEMS ------------*/
+.f-align-start {align-items: flex-start;}
+.f-align-center {align-items: center;}
+.f-align-end {align-items: flex-end;}
+
+.f-align-self-start {align-self: start;}
+.f-align-self-center {align-self: center;}
+.f-align-self-end {align-self: end;}
+
+.f-center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-center {text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+
+.gap-1 {gap: calc(1px + 1vw);}
+.gap-2 {gap: calc(2px + 1vw);}
+.gap-3 {gap: calc(4px + 2vw);}
+.gap-4 {gap: calc(8px + 2vw);}
+.gap-5 {gap: calc(16px + 2vw);}
+.gap-6 {gap: calc(24px + 2vw);}
+.gap-7 {gap: calc(32px + 2vw);}
+.gap-8 {gap: calc(40px + 2vw);}
+.gap-9 {gap: calc(48px + 2vw);}
+.gap-10 {gap: calc(56px + 2vw)}

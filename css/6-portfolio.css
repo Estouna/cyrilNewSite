@@ -1,0 +1,13 @@
+.container-square {
+    margin: 40px 8px 0;
+}
+
+.container-square, .line-square {
+    gap: 8px
+}
+
+.square {
+    width: calc(60px + 5vw);
+    height: calc(60px + 5vw);
+    border: 1px solid var(--grey);
+}
