@@ -25,15 +25,15 @@ texts.forEach(function (p) {
 
 // texts.innerHTML = texts.textContent.replace(/\S/g, "<span>$&</span>");
 
-// Sélectionnez tous les éléments span que vous souhaitez gérer
-const spans = document.querySelectorAll('span'); // Vous pouvez ajuster le sélecteur en fonction de vos besoins
+// Sélectionnez tous les éléments span
+const spans = document.querySelectorAll('span');
 
 // Fonction pour ajouter la classe active et planifier son retrait après 10 secondes
 function addAndRemoveClassWithTimeout(span) {
   span.classList.add('active');
   setTimeout(function () {
     span.classList.remove('active');
-  }, 10000); // 10000 millisecondes équivalent à 10 secondes
+  }, 10000);
 }
 
 // Ajoutez un écouteur d'événements "mouseenter" pour chaque élément span
