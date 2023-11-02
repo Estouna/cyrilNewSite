@@ -9,7 +9,7 @@
 :root {
     /* --------------- TEXT COLOR ----------------- */
     --text-black: #111111;
-    --text-white: #fcfcfc;
+    --text-white: #fff;
     --text-grey: #adadad;
     --text-darkGrey: #706f6f;
     --text-blue: #142f7d;
@@ -76,10 +76,10 @@ a {
     user-select: none;
 }
 
-#a_propos, #tarifs, #portfolio, #contact {
+#tarifs, #portfolio, #contact {
     /* background-color: var(--white); */
-    background-image: url('../asset/fondBlanc3.jpg');
-    background-size: 35%;
+    background-image: url('../asset/1-texture-papier-blanc-clair-1.jpg');
+    background-size: 180%;
 }
 
 #a_propos h1, #tarifs h1, #tarifs2 h1, #portfolio h1, #contact h1, #test h1, #test2 h1 {
@@ -89,7 +89,7 @@ a {
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
     border-radius: 10px;
-    margin: calc(50px + 2vw) 0 calc(2px + 4vw);
+    margin: calc(50px + 2vw) 0 calc(2px + 2vw);
     text-align: center;
     color: var(--text-logo);
 }

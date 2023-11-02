@@ -14,7 +14,10 @@
 .nav-main {
     padding: 0;
     border-radius: 3px;
-    border: 1px solid var(--grey);
+    border: 2px solid rgb(255, 255, 255);
+    outline: 1px solid rgb(109, 109, 109);
+    box-shadow:
+        1px 1px 1px rgb(82, 82, 82);
 }
 
 .box-logo {
@@ -32,8 +35,8 @@
 }
 
 .nav-main-li {
-    background-image: url('../asset/fondBlanc2.jpg');
-    background-size: 500%;
+    background-image: url('../asset/1-texture-papier-blanc-clair-1.jpg');
+    background-size: 400%;
 }
 
 .nav-main a {
@@ -57,7 +60,12 @@
     color: var(--white);
 }
 
-.btn-1, .btn-2, .btn-3, .btn-4, .btn-5, .btn-6 {
+.btn-1,
+.btn-2,
+.btn-3,
+.btn-4,
+.btn-5,
+.btn-6 {
     border-right: 1px solid var(--grey);
 }
 

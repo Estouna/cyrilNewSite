@@ -37,6 +37,27 @@
 }
 
 .label-cube {
+    background-image: url('../asset/1-texture-papier-blanc-clair-1.jpg');
+    background-size: 300%;
+    border: 2px solid #ffffff;
+    /* box-shadow: 1px 2px 7px rgb(45, 45, 45); */
+    box-shadow:
+    -1px 1px 3px 1px rgb(82, 82, 82),
+    1px -1px 2px 1px rgb(230, 230, 230),
+    inset 1px -1px 1px 0px rgb(65, 65, 65),
+    inset -1px 1px 1px 0px rgb(230, 230, 230);
+    border-radius: 50%;
+    padding: 5px;
+    width: calc(60px + 1.7vw);
+    height: calc(60px + 1.7vw);
+    color: #658a96;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: calc(6px + 0.3vw);
+    font-weight: bold;
+}
+
+/* .label-cube {
     background-color: var(--logo);
     border: 3px solid #97bac5;
     box-shadow: 1px 2px 5px rgb(45, 45, 45);
@@ -48,7 +69,7 @@
     cursor: pointer;
     transition: 0.3s;
     font-size: calc(7px + 0.2vw);
-}
+} */
 
 .label-cube, ._face {
     -webkit-user-select: none;
@@ -57,6 +78,21 @@
 }
 
 .label-cube:hover {
+    border: 2px solid rgb(179, 179, 179)
+}
+
+.label-cube:active {
+    background-color: #ffffff;
+    color: #4b6d79;
+    outline: 1px solid rgb(82, 82, 82);
+    box-shadow:
+        0 0 0 0 #ffffff,
+        0 0 0 0 #ffffff,
+        inset -3px 3px 9px 0px rgb(82, 82, 82),
+        inset 3px -3px 5px #ffffff;
+}
+
+/* .label-cube:hover {
     background-color: rgb(162, 183, 190);
     border: 3px solid rgb(176, 193, 199);;
 }
@@ -66,7 +102,7 @@
     border: 3px solid #668792af;
     box-shadow: inset 3px 3px 10px black;
     color: rgb(219, 219, 219);
-}
+} */
 
 /* .separator {
     margin: calc(60px + 3.5vw);
@@ -102,14 +138,15 @@ ex: si width/height = max(100px, 12vw), translate3d = 100/2 et 12/2 donc transla
 
 ._face {
     position: absolute;
-    background-image: url('../asset/fondBlanc2.jpg');
-    background-size: 120%;
-    padding: 5px;
+    background-image: url('../asset/1-texture-papier-blanc.jpg');
+    background-size: 200%;
     line-height: calc(12px + 0.5vw);
-    border: 1px solid var(--logo);
+    outline: 1px solid #7d9ba5;
+    /* border: 1px solid var(--grey); */
 }
 
 .btn-face {
+    background-color: #7d9ba5ab;
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -118,21 +155,25 @@ ex: si width/height = max(100px, 12vw), translate3d = 100/2 et 12/2 donc transla
 }
 
 ._face h2 {
-    font-size: calc(9px + .2vw);
-    background-color: var(--logo);
-    color: var(--text-white);
+    font-size: calc(10px + .2vw);
+    background-color: var(--white);
+    border: 2px solid var(--logo);
+    color: var(--text-logo);
     padding: calc(1px + 0.2vw) calc(8px + 0.2vw);
     border-radius: 5px;
 }
 
 ._face p {
     font-size: calc(7px + .2vw);
+    color: var(--text-white);
     padding: 5px;
 }
 
 .prix{
     padding: 5px;
     background-color: var(--logo);
+    border: 1px solid var(--white);
+    outline: 2px solid var(--logo);
     color: var(--text-white);
     border-radius: 15px;
 }
