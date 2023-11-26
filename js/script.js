@@ -43,15 +43,24 @@ spans.forEach(function (span) {
   });
 });
 
+//FLOWER
+const btnFlower = document.querySelector(".btn-flower");
+const flower = document.querySelector(".flower")
+
+btnFlower.addEventListener("click", openFlower);
+
+function openFlower() {
+    flower.classList.toggle("active");
+}
 /*
   CARDS TARIFS
 */
-let card = document.querySelector('.card-1');
-card.addEventListener('click', function () {
-  card.classList.toggle('is-flipped');
-});
+// let card = document.querySelector('.card-1');
+// card.addEventListener('click', function () {
+//   card.classList.toggle('is-flipped');
+// });
 
-let card2 = document.querySelector('.card-2');
-card2.addEventListener('click', function () {
-  card2.classList.toggle('is-flipped');
-});
+// let card2 = document.querySelector('.card-2');
+// card2.addEventListener('click', function () {
+//   card2.classList.toggle('is-flipped');
+// });

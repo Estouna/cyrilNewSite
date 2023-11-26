@@ -21,6 +21,7 @@
     --darkGrey: #706f6f;
     --blue: #142f7d;
     --logo: #7d9ba5;
+    --logoTrans: #7d9ba597;
     /* --------------- SLIDER BACKGROUND ----------------- */
     --slide1: #111111;
     --slide2: #8a6630;
@@ -47,6 +48,7 @@ body, main {
 }
 
 section {
+    position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;

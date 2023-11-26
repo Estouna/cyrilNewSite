@@ -21,39 +21,158 @@
     <title>Cyril Depont</title>
 </head>
 <body>
-
-    <header class="header-nav flex f-justify-between f-align-center">
-        <div class="box-logo">
-            <img class="img-logo" src="asset/Logo-CD1.svg" alt="Logo">
-        </div>
-        <nav class="nav-main">
-            <ul class="nav-main-ul flex f-center">
-                <li class="nav-main-li"><a href="#home" class="active btn-1">Accueil</a></li>
-                <li class="nav-main-li"><a href="#a_propos" class="btn-2">A propos</a></li>
-                <li class="nav-main-li"><a href="#portfolio" class="btn-3">Portfolio</a></li>
-                <li class="nav-main-li"><a href="#tarifs" class="btn-4">Tarifs</a></li>
-                <li class="nav-main-li"><a href="#contact" class="btn-5">Contact</a></li>
-                <li class="nav-main-li"><a href="#test" class="btn-6">Test</a></li>
-                <li class="nav-main-li"><a href="#test2" class="btn-7">Test 2</a></li>
-            </ul>
-            <div class="burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
+    
     <main>
+        
+            <header class="header-nav flex f-justify-between f-align-center">
+                <div class="box-logo">
+                    <img class="img-logo" src="asset/Logo-CD1.svg" alt="Logo">
+                </div>
+            
+                <div class="container-circle">
+                    <div class="circle__div--arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="m357-384 123-123 123 123 57-56-180-180-180 180 57 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                        </svg>
+                    </div>
+            
+                    <nav class="circle">
+                        
+                        <!--Premier Quart-->
+                        <div class="circle__div--part">
+                            <!--Slot 1-->
+                            <div class="circle__div--subPart slot-1">
+                                <a class="circle__a--link active" href="#home">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                            <path d="M222-182h148v-220.5q0-12.25 8.375-20.625T399-431.5h162.5q11.675 0 20.088 8.375Q590-414.75 590-402.5V-182h148v-387.667L480-763 222-569.667V-182Zm-57.5 0v-387.5q0-13.844 5.891-25.875 5.89-12.031 17.109-20.125l258-193.5q15.38-11.5 34.44-11.5 19.06 0 34.56 11.5l258 193.5q11.219 8.094 17.109 20.125 5.891 12.031 5.891 25.875V-182q0 23.719-16.891 40.609Q761.719-124.5 738-124.5H561.5q-12.25 0-20.625-8.375T532.5-153.5V-374h-105v220.5q0 12.25-8.396 20.625-8.397 8.375-20.048 8.375H221.779q-23.467 0-40.373-16.891Q164.5-158.281 164.5-182ZM480-473Z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!--Slot 2-->
+                            <div class="circle__div--subPart slot-2">
+                                <a class="circle__a--link" href="#a_propos">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                            <path d="M480.022-480.5q-65.522 0-106.522-40.978t-41-106.5q0-65.522 40.978-106.522t106.5-41q65.522 0 106.522 40.978t41 106.5q0 65.522-40.978 106.522t-106.5 41ZM164.5-224v-33.515q0-37.485 18.75-63.985t48.431-40.174Q298-391 358.5-406T480-421q61 0 121 15.25t126.399 44.433q30.823 13.637 49.462 39.854Q795.5-295.247 795.5-257.53v33.768q0 23.45-16.891 40.356Q761.719-166.5 738-166.5H222q-23.719 0-40.609-16.891Q164.5-200.281 164.5-224Zm57.5 0h516v-33.372q0-16.318-9.75-30.973Q718.5-303 705-310q-64-30.5-116.294-42t-108.575-11.5Q423.5-363.5 370.5-352t-116 42q-14 7-23.25 21.729T222-257.262V-224Zm258-314q39 0 64.5-25.5T570-628q0-39-25.5-64.5T480-718q-39 0-64.5 25.5T390-628q0 39 25.5 64.5T480-538Zm0-90Zm0 404Z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!--Slot 3-->
+                            <div class="circle__div--subPart slot-3">
+                                <a class="circle__a--link" href="#portfolio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                        <path d="M159.148-143.078q-22.606 0-39.338-16.732t-16.732-39.422v-444.613q0-22.69 16.732-39.422 16.732-16.732 39.422-16.732h182.616v-80.79q0-22.699 
+                                        16.731-39.415 16.732-16.716 39.342-16.716h164.158q22.61 0 39.342 16.732 16.731 16.732 16.731 39.421v80.768h182.616q22.69 0 39.422 16.732 16.732 16.732 
+                                        16.732 39.422v444.613q0 22.69-16.732 39.422-16.732 16.732-39.338 16.732H159.148Zm.084-43.845h641.536q4.616 0 8.462-3.847 3.847-3.846 
+                                        3.847-8.462v-444.613q0-4.616-3.847-8.462-3.846-3.846-8.462-3.846H159.232q-4.616 0-8.462 3.846-3.847 3.846-3.847 8.462v444.613q0 4.616 3.847 8.462 3.846 3.847 
+                                        8.462 3.847Zm226.461-513.076h188.614v-80.768q0-4.615-3.846-8.462-3.847-3.846-8.462-3.846H398.001q-4.615 0-8.462 3.846-3.846 3.847-3.846 8.462v80.768Zm-238.77 513.076v-469.23V-186.923Z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
 
+                        <!--Deuxième Quart-->
+                        <div class="circle__div--part">
+                            <!--Slot 4-->
+                            <div class="circle__div--subPart slot-4">
+                                <a class="circle__a--link" href="#tarifs">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                            <path d="M288.872-86q-29.135 0-49.753-20.747-20.619-20.747-20.619-49.881t20.747-49.753Q259.994-227 289.128-227q29.135 
+                                            0 49.753 20.747 20.619 20.747 20.619 49.881t-20.747 49.753Q318.006-86 288.872-86Zm395.5 0q-29.135 0-49.753-20.747Q614-127.494 
+                                            614-156.628t20.747-49.753Q655.494-227 684.628-227q29.135 0 49.753 20.747Q755-185.506 755-156.372t-20.747 49.753Q713.506-86 684.372-86ZM236-740.5l110 
+                                            228h285.5l125-228H236ZM207-798h582.574q22.964 0 34.445 20.839Q835.5-756.323 824-736L691-496.5q-10.5 18.5-28.123 30T625-455H325l-56.5 105h458q11.675 0 
+                                            20.088 8.463Q755-333.074 755-321.325q0 12.325-8.412 20.575-8.413 8.25-20.088 8.25H279q-41.5 0-59.5-27.25t.5-61.015l64-117.448L133-818.5H85q-12.25 
+                                            0-20.625-8.425Q56-835.351 56-847.425q0-12.075 8.375-20.325T85-876h67.645q8.355 0 15.305 4.185Q174.9-867.63 178-860l29 62Zm139 285.5h285.5H346Z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!--Slot 5-->
+                            <div class="circle__div--subPart slot-5">
+                                <a class="circle__a--link" href="#contact">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                            <path d="M790.5-125Q677-125 558-180.5T338-338Q236-439 180.5-557.75T125-790.692q0-18.808 12.714-31.558Q150.429-835 169.5-835H306q14 
+                                            0 23.75 9.75t13.75 24.75l26.929 123.641Q372-663.5 369.5-652q-2.5 11.5-10.229 19.226L261-533q26 44 54.688 81.658Q344.375-413.683 379-380q36.5 
+                                            38 77.25 69.323Q497-279.353 542-255l95.544-98q9.456-10.5 21.357-14.25T682.5-369l117.362 25.438Q815-340 825-327.801q10 12.198 10 27.301v131q0 
+                                            19.071-12.714 31.786Q809.571-125 790.5-125ZM232-585.5l81-82-23.5-110H183q1.5 41.5 13 88.25t36 103.75Zm364 358q40 19 88.166 31t93.334 
+                                            14v-107l-102-21.5-79.5 83.5Zm-364-358Zm364 358Z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!--Slot 6-->
+                            <div class="circle__div--subPart slot-6">
+                                <a class="circle__a--link" href="#test">
+                                    Test
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!--Troisième Quart-->
+                        <div class="circle__div--part">
+                            <!--Slot 7-->
+                            <div class="circle__div--subPart slot-7">
+                                <a class="circle__a--link" href="#test2">
+                                    Test2
+                                </a>
+                            </div>
+                            <!--Slot 8-->
+                            <!-- <div class="circle__div--subPart slot-8"><a class="circle__a--link" href="#">S8</a></div> -->
+                            <!--Slot 9-->
+                            <!-- <div class="circle__div--subPart slot-9"><a class="circle__a--link" href="#">S9</a></div> -->
+                        </div>
+
+                        <!--Quatrième Quart-->
+                        <div class="circle__div--part">
+                            <!--Slot 10-->
+                            <!-- <div class="circle__div--subPart slot-10"><a class="circle__a--link" href="#">S10</a></div> -->
+                            <!--Slot 11-->
+                            <!-- <div class="circle__div--subPart slot-11"><a class="circle__a--link" href="#">S11</a></div> -->
+                            <!--Slot 12-->
+                            <!-- <div class="circle__div--subPart slot-12"><a class="circle__a--link" href="#">S12</a></div> -->
+                        </div>
+            
+            
+            
+                    </nav>
+            
+                </div>
+                <div class="bg-burger">
+                    <svg class="burger" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                            <g fill="none" stroke-width="7.999" stroke-linecap="round">
+                                <path d="M 55,26.000284 L 24.056276,25.999716" />
+                                <path d="M 24.056276,49.999716 L 75.943724,50.000284" />
+                                <path d="M 45,73.999716 L 75.943724,74.000284" />
+                                <path d="M 75.943724,26.000284 L 45,25.999716" />
+                                <path d="M 24.056276,73.999716 L 55,74.000284" />
+                            </g>
+                        </svg>
+                </div>
+            
+            
+            
+                <!--MENU ORIGINE-->
+                <!-- <nav class="nav-main">
+                        <ul class="nav-main-ul flex f-center">
+                            <li class="nav-main-li"><a href="#home" class="active btn-1">Accueil</a></li>
+                            <li class="nav-main-li"><a href="#a_propos" class="btn-2">A propos</a></li>
+                            <li class="nav-main-li"><a href="#portfolio" class="btn-3">Portfolio</a></li>
+                            <li class="nav-main-li"><a href="#tarifs" class="btn-4">Tarifs</a></li>
+                            <li class="nav-main-li"><a href="#contact" class="btn-5">Contact</a></li>
+                            <li class="nav-main-li"><a href="#test" class="btn-6">Test</a></li>
+                            <li class="nav-main-li"><a href="#test2" class="btn-7">Test 2</a></li>
+                        </ul>
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav> -->
+            </header>
+        
         <!-- 
-			XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ACCUEIL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ACCUEIL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 		-->
         <section id="home" class="column f-center">
 
-            <div class="background">
-                <div class="opac"></div>
-            </div>
+            <div class="background"></div>
 
             <div class="container-home column">
             
@@ -401,6 +520,7 @@
 		-->
         <section id="contact" class="column f-align-center">
             <h1>CONTACT</h1>
+            <a href="https://cyrilgab.alwaysdata.net/bmc/" class="a-bmc" target="_blank">BMC</a>
         </section>
 
         <!-- 
@@ -420,9 +540,31 @@
 		-->
         <section id="test2" class="column f-center">
             <div class="titre flex f-center">
-                <h2><span>C</span>Y<span>R</span>I<span>L</span> D<span>E</span>P<span>O</span>N<span>T</span></h2>
-                <h3>Developpeur Web</h3>
-                <a href="https://cyrilgab.alwaysdata.net/bmc/" class="a-bmc" target="_blank">BMC</a>
+                <p class="alert"><small>CSS sin() et cos() <strong>ne sont pas</strong> supportés par votre navigateur.</small></p>
+
+                <div class="container-flower">
+                  <figure class="flower">
+                    <img src="https://picsum.photos/100/100?seed=1">
+                    <img src="https://picsum.photos/100/100?seed=2">
+                    <img src="https://picsum.photos/100/100?seed=3">
+                    <img src="https://picsum.photos/100/100?seed=4">
+                    <img src="https://picsum.photos/100/100?seed=5">
+                    <img src="https://picsum.photos/100/100?seed=6">
+                    <img src="https://picsum.photos/100/100?seed=7">
+                    <img src="https://picsum.photos/100/100?seed=8">
+                    <img src="https://picsum.photos/100/100?seed=9">
+                    <img src="https://picsum.photos/100/100?seed=10">
+                    <img src="https://picsum.photos/100/100?seed=11">
+                    <img src="https://picsum.photos/100/100?seed=12">
+                  </figure>
+                  <div class="bg-btn">
+                    <button class="btn-flower"><span>Projets</span></button>
+                  </div>
+                  <div class="stem">
+                    <div class="stem-left"></div>
+                    <div class="stem-right"></div>
+                  </div>
+                </div>
             </div>
 
         </section>

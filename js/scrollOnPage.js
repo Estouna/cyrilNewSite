@@ -3,6 +3,7 @@ const navLinks = document.querySelectorAll("nav a");
 const mediaQueryScrollOnPage = window.matchMedia('(min-width: 900px)');
 
 if (mediaQueryScrollOnPage.matches) {
+
   // Mise à jour de la section active pendant le scroll
   window.addEventListener("scroll", () => {
     // Trouve la section active
@@ -32,7 +33,7 @@ if (mediaQueryScrollOnPage.matches) {
 
     e.preventDefault();
 
-    // Récupére la direction du scroll, deltaY retourne un nombre positif (scroll vers le bas) ou négatif (scroll vers le haut). 
+    // Récupérer la direction du scroll, deltaY retourne un nombre positif (scroll vers le bas) ou négatif (scroll vers le haut). 
     const direction = e.deltaY < 0 ? -1 : 1;
 
     // Trouve la section active (reverse() plus performant)
