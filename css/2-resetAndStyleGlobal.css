@@ -12,14 +12,14 @@
     --text-white: #fff;
     --text-grey: #adadad;
     --text-darkGrey: #706f6f;
-    --text-blue: #142f7d;
+    --text-blue: #4ca4df;
     --text-logo: #7d9ba5;
     /* --------------- COLORS ----------------- */
     --black: #111111;
     --white: #fcfcfc;
     --grey: #adadad;
     --darkGrey: #706f6f;
-    --blue: #142f7d;
+    --blue: #4ca4df;
     --logo: #7d9ba5;
     --logoTrans: #7d9ba597;
     /* --------------- SLIDER BACKGROUND ----------------- */
@@ -42,15 +42,13 @@
     --font-3: 'Photoshoot', arial, sans-serif;
 }
 
-body, main {
+html, body, main, section {
     width: 100%;
     height: 100%;
 }
 
 section {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -68,10 +66,9 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    scroll-behavior: smooth;
 }
 
-.unselectable {
+.notSelectable {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -79,9 +76,7 @@ a {
 }
 
 #tarifs, #portfolio, #contact {
-    /* background-color: var(--white); */
-    background-image: url('../asset/1-texture-papier-blanc-clair-1.jpg');
-    background-size: 180%;
+    background-color: var(--white);
 }
 
 #a_propos h1, #tarifs h1, #tarifs2 h1, #portfolio h1, #contact h1, #test h1, #test2 h1 {

@@ -1,75 +1,86 @@
+const header = document.querySelector(".header-nav");
 const burger = document.querySelector(".burger");
 const container_circle = document.querySelector(".container-circle");
-const circle = document.querySelector(".circle");
-const arrow = document.querySelector(".circle__div--arrow");
-const parts = document.querySelectorAll(".circle__div--part");
+const menuCircle = document.querySelector(".circle");
+const arrowTop = document.querySelector(".circle__div--arrowTop");
+const arrowBottom = document.querySelector(".circle__div--arrowBottom");
 const navLink = document.querySelectorAll(".circle__a--link");
 
-//Détermine le nombre de parts utilisées du cercle (1 part = 1/4 du cercle et 3 liens)
-let nbParts = verifParts();
+// Nombre de lien max dans un quart de cercle
+let linksPerQuarter = 3;
+// Nombre de liens présents dans le cercle
+let links = navLink.length;
+/* Détermine le nombre de quart utilisé (Math.ceil() arrondi à l'entier le plus haut ex: 7 / 3 = 2.33... donc = 3 quarts pour 7 liens)*/
+let nbQuarter = Math.ceil(links / linksPerQuarter);
+let degree = 0;
+let currentQuarter = 1;
 
-burger.addEventListener("click", mobileMenu);
-function mobileMenu() {
+arrowTop.onclick = function () {
+    if (currentQuarter !== 1) {
+        currentQuarter--
+        degree -= 90;
+        menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+    }
+}
+
+arrowBottom.onclick = function () {
+    if (currentQuarter !== nbQuarter) {
+        currentQuarter++
+        degree += 90;
+        menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+    }
+}
+
+// Avec retour début/fin quand début/fin menu
+// arrowTop.onclick = function () {
+//     if (currentQuarter !== 1) {
+//         currentQuarter--
+//         degree -= 90;
+//         menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+//     } else {
+//         currentQuarter = nbQuarter;
+//         degree += 90 * (nbQuarter - 1);
+//         menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+//     }
+// }
+
+// arrowBottom.onclick = function () {
+//     if (currentQuarter !== nbQuarter) {
+//         currentQuarter++
+//         degree += 90;
+//         menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+//     } else {
+//         currentQuarter = 1;
+//         degree -= 90 * (nbQuarter - 1);
+//         menuCircle.style.transform = 'rotate(' + degree + 'deg)';
+//     }
+// }
+
+
+
+burger.addEventListener("click", openMenu);
+function openMenu() {
     burger.classList.toggle("active");
     container_circle.classList.toggle("active");
-    circle.classList.toggle("active");
-    (nbParts > 1) ? arrow.classList.toggle("active") : '';
+    menuCircle.classList.toggle("active");
+    (nbQuarter > 1) ? arrowTop.classList.toggle("active") : '';
+    (nbQuarter > 2) ? arrowBottom.classList.toggle("active") : '';
 }
+
+// Ferme le menu quand clique dans le vide
+document.addEventListener('mouseup', function (e) {
+    if (!header.contains(e.target)) {
+        closeMenu()
+    }
+});
 
 // Ferme le menu quand clic sur liens
 // navLink.forEach(n => n.addEventListener("click", closeMenu));
-// function closeMenu() {
-//     burger.classList.remove("active");
-//     container_circle.classList.remove("active");
-//     circle.classList.remove("active");
-//     arrow.classList.remove("active");
-// }
 
-let degree = 0;
-let clickStart = 1;
-let nbClicks = 1;
-
-arrow.onclick = function () {
-    if (nbClicks < nbParts) {
-        nbClicks++
-        degree += 90;
-        circle.style.transform = 'rotate(' + degree + 'deg)';
-    } else {
-        nbClicks = 1;
-        degree -= 90 * (nbParts - 1);
-        circle.style.transform = 'rotate(' + degree + 'deg)';
-    }
+function closeMenu() {
+    burger.classList.remove("active");
+    container_circle.classList.remove("active");
+    menuCircle.classList.remove("active");
+    arrowTop.classList.remove("active");
+    arrowBottom.classList.remove("active");
 }
-
-// Vérifie si au moins un lien existe dans chaque partie du cercle
-function verifParts() {
-    const returnedArray = []
-    for (let item of parts) {
-        if (item.querySelector("div.circle__div--subPart") !== null) {
-            returnedArray.push(item);
-        }
-    }
-    return returnedArray.length;
-}
-
-
-// MENU BURGER ORIGINE
-// const burger = document.querySelector(".burger");
-// const navMenu = document.querySelector(".nav-main-ul");
-
-// burger.addEventListener("click", mobileMenu);
-
-// function mobileMenu() {
-//   burger.classList.toggle("active");
-//   navMenu.classList.toggle("active");
-// }
-
-// // Ferme le menu quand clic sur lien
-// const navLink = document.querySelectorAll(".nav-main-li");
-
-// navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-// function closeMenu() {
-//   burger.classList.remove("active");
-//   navMenu.classList.remove("active");
-// }

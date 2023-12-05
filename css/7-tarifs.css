@@ -22,7 +22,10 @@
 }
 
 .input-cube {
-    display: none;
+    position: absolute;
+    left:0;
+    top:0;
+    visibility: hidden;
 }
 
 .gr-label {
@@ -37,8 +40,6 @@
 }
 
 .label-cube {
-    background-image: url('../asset/1-texture-papier-blanc-clair-1.jpg');
-    background-size: 300%;
     border: 2px solid #ffffff;
     /* box-shadow: 1px 2px 7px rgb(45, 45, 45); */
     box-shadow:

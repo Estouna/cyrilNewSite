@@ -1,37 +1,23 @@
 /*
     BARRE DE NAVIGATION ORIGINE
 */
-:root {
-    /*Réglage taille du cercle (modifier valeur non automatique)*/
-    --s-circle: calc(330px + 1vw);
-    /*Réglage taille d'un quart du cercle*/
-    --s-part: calc(var(--s-circle) / 2);
-    /*Réglage taille des slots (3 liens)*/
-    --s-subPart: calc(var(--s-part) / 3);
-    /*Réglage position du conteneur (top/right)*/
-    --c-tr: calc(var(--s-circle) / -2);
-    /*Réglage position btn arrow (top/right) */
-    --arr-t: calc(var(--s-circle) / 1.95);   
-    --arr-r: calc(var(--s-circle) / -8);   
-}
-
-
+/*z-index = .container-circle(1) .bg-burger(2)*/
 .header-nav {
     position: fixed;
+    width: 100%;
     top: 0;
     right: 0;
-    width: 100%;
     z-index: 1;
 }
 
-.box-logo {
+.logo {
     position: relative;
     top: 0;
     width: calc(150px + 7vw);
     height: 100%;
 }
 
-.img-logo {
+.logo-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,110 +26,98 @@
 }
 
 /* CIRCLE */
-.container-circle {
-    position: absolute;
-    top: var(--c-tr);
-    right: var(--c-tr);
-    width: var(--s-circle);
-    height: var(--s-circle);
-    background-color: var(--logoTrans);;
-    border-radius: 50%;
-    outline: 2px solid var(--logo);
-    transition: 0.8s;
-    transform: scale(0.1);
+:root {
+    /*Diamètre du cercle*/
+    --width: calc(270px + 2vw);
+    /*Rayon du cercle (qui s'adaptera si --width change)*/
+    --radius: calc((var(--width) - var(--slotSize)) / 2);
+    /*Hauteur/largeur slots (modifier la division permet de centrer les slots selon taille des noms/icônes)*/
+    --slotSize: calc(var(--width) / 4.3);
+    /*Réglage top/right du cercle (valeur négative)*/
+    --circle-tr: calc(var(--width) / -2);
 }
 
-.container-circle.active {
-    transform: scale(1);
+.container-circle {
+    position: relative;
+    background-color: rgba(28, 28, 28, 0.774);
+    border-radius: 50%;
+    transition: 0.4s;
+    transform: scale(0.1);
+    z-index: 1;
 }
 
 .circle {
-    display: flex;
-    flex-wrap: wrap;
-    transition: 0.8s;
-    opacity: 0;
+    position: absolute;
+    top: var(--circle-tr);
+    right: var(--circle-tr);
+    background-color: var(--logoTrans);;
+    width: var(--width);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: 0.4s;
+    opacity: 1;
 }
 
-.circle.active {
-    opacity: 1;
+.container-circle.active {transform: scale(1);}
+.circle.active {opacity: 1;}
+
+.slots {
+    /*Coordonnée de X = rayon + (rayon * cos(degré))*/
+    --pos-x: calc(var(--radius) + (var(--radius) * cos(var(--_degree))));
+    /*Coordonnée de Y = rayon + (rayon * sin(degré))*/
+    --pos-y: calc(var(--radius) + (var(--radius) * sin(var(--_degree))));
+    top: var(--pos-y);
+    left: var(--pos-x);
+    width: var(--slotSize);
+    height: var(--slotSize);
+    position: absolute;
+    display: grid;
+    place-content: center;
+    font-size: 12px;
 }
 
 .circle__a--link {
     color: white;
     text-decoration: none;
+    text-align: center;
 }
-
-.circle__div--part {
-    width: var(--s-part);
-    height: var(--s-part);
-    overflow: hidden;
-}
-
-/* .circle__div--part:nth-child(1) {border-radius: 100% 0 0 0;}
-.circle__div--part:nth-child(2) {border-radius: 0 100% 0 0;}
-.circle__div--part:nth-child(3) {border-radius: 0 0 0 100%;}
-.circle__div--part:nth-child(4) {border-radius: 0 0 100% 0;} */
-
-.circle__div--subPart {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--s-subPart);
-    height: var(--s-subPart);
-}
-
-.slot-1 {top:50%; left:5.5%;}
-.slot-2 {top:66.5%; left:16.5%;}
-.slot-3 {bottom:5.5%; left:33%;} 
-
-.slot-4 {bottom:5.5%; left:50%;}
-.slot-5 {top:66.5%; right:16.5%;}
-.slot-6 {top:50%; right:5.5%;}
-
-.slot-7 {top:33%; right:5.5%;}
-.slot-8 {top:16.5%; right:16.5%;}
-.slot-9 {top:5.5%; left:50%;}
-
-.slot-10 {top:5.5%; right:50%;}
-.slot-11 {top:16.5%; left:16.5%;}
-.slot-12 {top:33%; left:5.5%;}
-
-.slot-4, .slot-5, .slot-6 {
-    transform: rotate(-90deg);
-}
-
-.slot-7, .slot-8, .slot-9 {
-    transform: rotate(180deg);
-}
-
-.slot-10, .slot-11, .slot-12 {
-    transform: rotate(90deg);
-} 
 
 .circle__a--link svg {
-    width: 36px;
-    height: 36px;
-    fill: var(--white);
-    transition: 1s;
-    padding: 2px;
+    width: 45px;
+    height: 45px;
+    padding: 4px;
     border-radius: 50%;
-}
-
-.circle__a--link svg:hover {
-    transform: scale(1.5);
+    fill: var(--white);
 }
 
 .circle__a--link.active svg {
     background-color: var(--logo);
 }
 
+/*
+  Un cercle fait 360 degrés. Il y a 12 slots sur le cercle, il faut donc placer un slot tous les 30 degrés (360/12). 
+  En mathématiques, midi est en fait à -90 degrés, soit 270 degrés (360 - 90).
+  La variable --degree (valeur en degré) permet de placer les slots sur le cercle. 
+  Il faut incrémenter les valeurs de 30 degrés pour boucler le cercle :
+  Ici je pars de 15deg car pour le menu les slots doivent être légèrement décalés.
+  Jouer avec ses valeurs pour placer les slots sur le cercle comme on le souhaite selon que le menu soit en haut, en bas, etc.
+*/
+.circle .slots:nth-child(1) { --_degree: 165deg; }
+.circle .slots:nth-child(2) { --_degree: 135deg; }
+.circle .slots:nth-child(3) { --_degree: 105deg; }
+.circle .slots:nth-child(4) { --_degree: 75deg; transform: rotate(-90deg); }
+.circle .slots:nth-child(5) { --_degree: 45deg; transform: rotate(-90deg); }
+.circle .slots:nth-child(6) { --_degree: 15deg; transform: rotate(-90deg); }
+.circle .slots:nth-child(7) { --_degree: 345deg; transform: rotate(-180deg); }
+.circle .slots:nth-child(8) { --_degree: 315deg; transform: rotate(-180deg); }
+.circle .slots:nth-child(9) { --_degree: 285deg; transform: rotate(-180deg); }
+.circle .slots:nth-child(10) { --_degree: 255deg; transform: rotate(90deg); }
+.circle .slots:nth-child(11) { --_degree: 225deg; transform: rotate(90deg); }
+.circle .slots:nth-child(12) { --_degree: 195deg; transform: rotate(90deg); }
+
 /* BURGER */
 .bg-burger {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--logo);
     border-bottom: 2px solid var(--white);
     border-left: 2px solid var(--white);
@@ -153,7 +127,7 @@
     width: 70px;
     border-radius: 0 0 0 100%;
     transition: 0.5s;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .burger {
@@ -165,12 +139,10 @@
     transition: 0.5s;
 }
 
-.burger:hover {
-    opacity: 0.7;
-}
+.burger:hover { opacity: 0.7; }
 
 .burger path {
-    stroke: var(--white);
+    stroke: white;
     transition: transform 0.5s;
 }
 
@@ -188,38 +160,52 @@
 .burger.active path:nth-child(5) {transform: rotate(-45deg);}
 
 /* ARROW */
-.circle__div--arrow {
+.circle__div--arrowTop,
+.circle__div--arrowBottom {
     position: absolute;
     font-size: 20px;
-    top: var(--arr-t);
-    left: var(--arr-r);
-    transition: 1s;
+    transition: 0.9s;
     cursor: pointer;
     visibility: hidden;
     opacity: 0;
 }
 
-.circle__div--arrow svg {
-    fill: var(--logo);
-    width: 35px;
-    height: 35px;
+.circle__div--arrowTop {
+    top: 2px;
+    right: calc(var(--radius) + 40px);
+}
+
+.circle__div--arrowBottom {
+    top: 38px;
+    right: calc(var(--radius) + 40px);
+    transform: rotate(180deg);
+}
+
+.circle__div--arrowTop svg,
+.circle__div--arrowBottom svg {
+    background-color: var(--logo);
+    fill: var(--white);
+    width: 40px;
+    padding: 0 4px;
+    height: 40px;
     transition: 1s;
     border-radius: 50%;
 }
 
-.circle__div--arrow svg:hover {
-    background-color: var(--logo);;
-    border-radius: 20%;
-    fill: var(--white);
+.circle__div--arrowTop svg:hover,
+.circle__div--arrowBottom svg:hover {
+    fill: #d8d8d8;
 }
 
-.circle__div--arrow.active {
+.circle__div--arrowTop.active,
+.circle__div--arrowBottom.active {
     visibility: visible;
     opacity: 1;
 }
 
-.circle__div--arrow:hover {
-    border-color: var(--white);
+.circle__div--arrowTop:hover,
+.circle__div--arrowBottom:hover {
+    border-color: #98ffea;
 }
 
 
